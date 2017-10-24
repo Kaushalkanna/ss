@@ -9,10 +9,15 @@ def message():
 
 
 @app.route('/post-data')
-def get_data():
+def post_data():
     name = request.args.get('deviceName', default="None", type=str)
     val = request.args.get('value', default="None", type=str)
     return '{}: {}'.format(name, val)
+
+
+@app.route('/get-data')
+def get_data():
+    return 'Nothing to return yet!!'
 
 
 if __name__ == '__main__':
