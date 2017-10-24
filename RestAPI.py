@@ -10,7 +10,7 @@ def message():
 
 @app.route('/hello')
 def hello_world():
-    return 'HELLO..!!'
+    return 'Hello world..!!'
 
 
 if __name__ == '__main__':
