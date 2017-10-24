@@ -1,12 +1,14 @@
 from flask import Flask, request
+import os
+import redis
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def message():
-    return '<H1>Welcome to Smart System home page</H1>'
-
+    r = redis.from_url(os.environ.get("REDIS_URL"))
+    return '<H1>Welcome to Smart System home page</H1><H3>{}</H3>'.format(r)
 
 @app.route('/post-data')
 def post_data():
